@@ -1,11 +1,330 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Menu</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./src/custom.css" />
+  </head>
+  <body class="">
+    <header class="fixed left-0 right-0 top-0 bg-white z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+          <!-- Logo -->
+          <a href="#" class="flex items-center">
+            <img src="./public/image/Logo 2.png" alt="Logo" class="w-20" />
+          </a>
+
+          <!-- Desktop Menu -->
+          <ul
+            id="nav-menu"
+            class="hidden md:flex space-x-6 text-sm items-center"></ul>
+
+          <!-- Mobile Toggle -->
+          <button id="toggle-menu" class="md:hidden text-black text-xl">
+            <img
+              id="img_menu"
+              src="./public/icon/menu_black.svg"
+              alt="delion_menu" />
+          </button>
+        </div>
+
+        <!-- loader -->
+        <div
+          id="loader"
+          class="fixed inset-0 bg-white flex items-center justify-center z-50">
+          <div
+            class="animate-spin rounded-full h-12 w-12 border-t-4 border-black"></div>
+        </div>
+        <!-- Mobile Menu -->
+        <ul
+          id="mobile-menu"
+          class="md:hidden bg-white left-0 right-0 px-4 absolute hidden flex-col text-sm space-y-2 py-4"></ul>
+      </div>
+    </header>
+
+    <!-- hero section -->
+    <section
+      class="h-[100vh] bg-cover bg-center bg-no-repeat"
+      style="background-image: url('./public/image/track.png')">
+      <div
+        class="hero text-white px-4 sm:px-6 py-8 mt-12 bg-black/50 h-full flex flex-col justify-center">
+        <h1 class="font-bold tracking-wide mb-8 text-3xl sm:text-4xl">
+          Welcome to DelionCommunication Limited
+        </h1>
+        <h2
+          class="text-2xl sm:text-3xl font-bold tracking-wide mb-12 text-white">
+          <span class="relative inline-block">
+            GOD IS OUR STRENGTH
+            <span
+              class="absolute left-1/2 bottom-2 transform -translate-x-1/2 w-40 -mt-1 h-6">
+              <svg
+                class="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-full"
+                width="150"
+                height="20"
+                viewBox="0 0 150 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0 10 C50 30, 100 -10, 150 10"
+                  stroke="red"
+                  stroke-width="3"
+                  fill="transparent" />
+              </svg>
+            </span>
+          </span>
+        </h2>
+
+        <p class="max-w-2xl text-base sm:text-[17px]">
+          Delion Communication Nigeria specializes in the supply and
+          installation of smart security and solar-powered systems across
+          Onitsha, Awka, Owerri, Port Harcourt, and Asaba. We provide solar
+          CCTV, automated gate openers, smart hotel locks, car tracking, fleet
+          management, solar generators, 4G truck cameras, and power banks for
+          Starlink. Our expert team delivers reliable solutions for homes,
+          businesses, estates, and institutions. Trusted in Anambra, Imo,
+          Rivers, and Delta States for professional service and cutting-edge
+          technology.
+        </p>
+
+        <div>
+          <button
+            role="button"
+            class="mt-8 bg-white text-sm rounded-lg flex items-center px-4 py-2 text-black">
+            <p>Click here to see location</p>
+            <img
+              src="./public/icon/location_on_28dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
+              alt="delion loation"
+              class="animate-bounce" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- hot sales -->
+    <article class="px-4 sm:px-6 mt-12">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl sm:text-3xl text-gray-800 font-bold lg:text-4xl">
+          Hot sales...
+        </h1>
+        <button
+          class="text-sm font-bold text-white px-4 rounded-lg py-2 bg-[#092635]">
+          View all
+        </button>
+      </div>
+
+      <div id="card_unbox" class="grid md:grid-cols-3 mb-3">
+        <!-- comming from view -->
+      </div>
+    </article>
+
+    <!-- most played game -->
+    <article class="px-4 sm:px-6 mt-12">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl sm:text-3xl text-gray-800 font-bold lg:text-4xl">
+          TOP GAMES...
+        </h1>
+        <button
+          class="text-sm font-bold text-white px-4 rounded-lg py-2 bg-[#092635]">
+          View all
+        </button>
+      </div>
+      <h2>Most Played</h2>
+
+      <div class="swiper mySwiper py-6 my-4">
+        <div class="swiper-wrapper mb-4">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-xl overflow-hidden mx-auto">
+              <img
+                src="./public/image/categories-02.jpg"
+                alt="Smart CCTV"
+                class="w-full h-44 object-cover" />
+
+              <div class="px-4 py2">
+                <p class="mb-2">
+                  carticory: <span class="text-[#5C8374]">Action</span>
+                </p>
+                <h3 class="text-lg font-semibold text-gray-800">Smart CCTV</h3>
+                <p class="text-sm text-gray-600 mt-1">
+                  Monitor your home or office 24/7 with high-definition night
+                  vision.
+                </p>
+                <button
+                  class="mt-4 bg-[#092635] text-white px-4 py-2 rounded-lg transition w-full">
+                  Explore
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-xl overflow-hidden mx-auto">
+              <img
+                src="./public/image/categories-03.jpg"
+                alt="Solar Panels"
+                class="w-full h-44 object-cover" />
+
+              <div class="px-4 py-2">
+                <p class="mb-2">
+                  carticory: <span class="text-[#5C8374]">Action</span>
+                </p>
+                <h3 class="text-lg font-semibold text-gray-800">
+                  Solar Panels
+                </h3>
+                <p class="text-sm text-gray-600 mt-1">
+                  Reliable and sustainable power solutions for homes and
+                  offices.
+                </p>
+                <button
+                  class="mt-4 bg-[#092635] text-white px-4 py-2 rounded-lg transition w-full">
+                  Explore
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-xl overflow-hidden">
+              <img
+                src="./public/image/categories-04.jpg"
+                alt="Automated Gate"
+                class="w-full h-44 object-cover" />
+
+              <div class="px-4 py-2">
+                <p class="mb-2">
+                  carticory: <span class="text-[#5C8374]">Action</span>
+                </p>
+                <h3 class="text-lg font-semibold text-gray-800">
+                  Automated Gate
+                </h3>
+                <p class="text-sm text-gray-600 mt-1">
+                  Enhance security and convenience with smart automatic gates.
+                </p>
+                <button
+                  class="mt-4 bg-[#092635] text-white px-4 py-2 rounded-lg transition w-full">
+                  Explore
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-xl overflow-hidden">
+              <img
+                src="./public/image/categories-01.jpg"
+                alt="Fleet Tracker"
+                class="w-full h-44 object-cover" />
+
+              <div class="py-2 px-4">
+                <p class="mb-2">
+                  carticory: <span class="text-[#5C8374]">Action</span>
+                </p>
+                <h3 class="text-lg font-semibold text-gray-800">
+                  Fleet Tracker
+                </h3>
+                <p class="text-sm text-gray-600 mt-1">
+                  Track vehicle movement in real-time from your mobile device.
+                </p>
+                <button
+                  class="mt-4 bg-[#092635] text-white px-4 py-2 rounded-lg transition w-full">
+                  Explore
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-xl overflow-hidden">
+              <img
+                src="./public/image/categories-05.jpg"
+                alt="Starlink Power"
+                class="w-full h-44 object-cover" />
+
+              <div class="px-4 py-2">
+                <p class="mb-2">
+                  carticory: <span class="text-[#5C8374]">Action</span>
+                </p>
+                <h3 class="text-lg font-semibold text-gray-800">
+                  Starlink Power
+                </h3>
+                <p class="text-sm text-gray-600 mt-1">
+                  Portable power banks optimized for your Starlink devices.
+                </p>
+                <button
+                  class="mt-4 bg-[#092635] text-white px-4 py-2 rounded-lg transition w-full">
+                  Explore
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper pagination dots -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </article>
+    <!-- second last -->
+    <h2
+      class="text-2xl sm:text-3xl text-gray-800 font-bold lg:text-4xl px-4 sm:px-6">
+      Go Pre-Order Now...
+    </h2>
+    <article class="md:mt-43 mt-10">
+      <section class="relative mb-14 lg:mb-20">
+        <div class="container mx-auto">
+          <div class="relative">
+            <!-- Text Overlay -->
+            <div
+              class="bg-white bg-opacity-90 lg:bg-opacity-80 p-6 sm:p-8 max-w-3xl rounded-lg shadow-xl absolute z-10 -top-3 left-0 right-0 mx-auto lg:left-auto lg:right-10 lg:-top-20 transform lg:translate-y-0">
+              <h1
+                class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight sm:leading-snug text-gray-800">
+                Go Pre-Order Now & Buy Your Favorite Products —
+                <br class="hidden sm:block" />
+                Get the <span class="text-blue-500">Best Prices</span>, Amazing
+                Deals,
+                <br class="hidden sm:block" />
+                and Exclusive Discounts Just For You!
+              </h1>
+              <!-- Add a CTA button for better conversion -->
+              <button
+                class="mt-6 bg-[#092635] cursor-pointer text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                Pre-Order Now
+              </button>
+            </div>
+
+            <!-- Image -->
+            <figure
+              class="flex justify-center relative z-0 pt-16 sm:pt-24 lg:pt-0">
+              <img
+                src="./public/image/gate.jpg"
+                class="rounded-lg"
+                alt="gate_delion" />
+            </figure>
+          </div>
+        </div>
+      </section>
+    </article>
+    <!-- footer -->
+
+    <footer>
+      <div class="container">
+        <div class="flex justify-center items-center pt-12">
+          <p class="text-white text-sm px-4">
+            Copyright © 2025 DelionCommunication Limited. All rights reserved.
+            &nbsp;&nbsp;
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./controll/contoller.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
 </html>
