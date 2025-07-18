@@ -1,12 +1,11 @@
 {
-  "name": "chim_f",
+  "name": "Delionco",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
     "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify"
-
   },
   "tags": [
     "swiper"
