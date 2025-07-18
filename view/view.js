@@ -11,9 +11,9 @@ class View {
     this.toggleBtn?.addEventListener("click", () => {
       const isHidden = this.mobileMenu.classList.toggle("hidden");
       if (isHidden) {
-        this.img_menu.src = "../public/icon/menu_black.svg";
+        this.img_menu.src = "./public/icon/menu_black.svg";
       } else {
-        this.img_menu.src = "../public/icon/menu_close.svg";
+        this.img_menu.src = "./public/icon/menu_close.svg";
       }
     });
   }
@@ -42,7 +42,7 @@ class View {
 
       // Create the icon span
       const icon = document.createElement("img");
-      icon.src = "../public/icon/up_white.svg";
+      icon.src = "./public/icon/up_white.svg";
       icon.alt = "dropdown arrow";
       icon.className = "ml-1 w-4 h-4 transition-transform duration-300";
       // Add text and icon
@@ -71,9 +71,9 @@ class View {
         const isHidden = dropdown.classList.toggle("hidden");
 
         if (isHidden) {
-          icon.src = "../public/icon/up_white.svg";
+          icon.src = "./public/icon/up_white.svg";
         } else {
-          icon.src = "../public/icon/down.svg";
+          icon.src = "./public/icon/down.svg";
         }
       });
 
