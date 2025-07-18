@@ -37,14 +37,15 @@ class View {
     if (item.dropdown) {
       const button = document.createElement("button");
       button.className = isMobile
-        ? "text-black w-full text-left font-medium py-2 flex items-center justify-between"
-        : "text-black font-medium flex items-center gap-1";
+        ? "text-black w-full text-left font-medium py-2 flex cursor-pointer   items-center justify-between"
+        : "text-black font-medium flex  cursor-pointer items-center gap-1";
 
       // Create the icon span
       const icon = document.createElement("img");
       icon.src = "./public/icon/up_white.svg";
       icon.alt = "dropdown arrow";
-      icon.className = "ml-1 w-4 h-4 transition-transform duration-300";
+      icon.className =
+        "ml-1 w-4 h-4 transition-transform cursor-pointer  duration-300";
       // Add text and icon
       button.innerHTML = `${item.name} `;
       button.appendChild(icon);
@@ -52,8 +53,8 @@ class View {
       // Create dropdown menu
       const dropdown = document.createElement("ul");
       dropdown.className = isMobile
-        ? "pl-4 space-y-1 text-sm hidden"
-        : "absolute hidden bg-white text-sm shadow-lg mt-2 rounded w-48 z-20";
+        ? "pl-4 space-y-1 text-sm hidden cursor-pointer "
+        : "absolute hidden bg-white text-sm shadow-lg mt-2 cursor-pointer  rounded w-48 z-20";
 
       item.dropdown.forEach((subItem) => {
         const subLi = document.createElement("li");
@@ -61,8 +62,8 @@ class View {
         a.href = subItem.href;
         a.textContent = subItem.name;
         a.className = isMobile
-          ? "block text-black py-3 text-[20] z-50 hover:px-4"
-          : "block px-4 py-2 hover:bg-gray-100";
+          ? "block text-black py-3 cursor-pointer text-[20] z-50 hover:px-4"
+          : "block px-4 py-2 hover:bg-gray-100 cursor-pointer ";
         subLi.appendChild(a);
         dropdown.appendChild(subLi);
       });
@@ -83,7 +84,7 @@ class View {
       const a = document.createElement("a");
       a.href = item.href;
       a.textContent = item.name;
-      a.className = "text-black font-medium";
+      a.className = "text-black font-medium cursor-pointer ";
       li.appendChild(a);
     }
 
@@ -101,7 +102,7 @@ class View {
           <h3 class="text-lg font-semibold text-gray-800 mt-2">${item.head}</h3>
           <p class="text-sm text-gray-600">${item.discription}</p>
           <button
-            class="mt-4 bg-[#092635] text-white px-4 py-2 rounded-lg transition">
+            class="mt-4 bg-[#092635] cursor-pointer  text-white px-4 py-2 rounded-lg transition">
           ${item.pricing}
           </button>
         </div>
